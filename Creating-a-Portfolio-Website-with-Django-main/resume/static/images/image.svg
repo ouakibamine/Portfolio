@@ -1,0 +1,52 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Spinning circle O. Amine logo">
+  <style>
+    .circle {
+      fill: none;
+      stroke: #00A8E8;
+      stroke-width: 5;
+      stroke-dasharray: 283;
+      stroke-dashoffset: 75;
+      transform-origin: 60px 60px;
+      animation: spin 3s linear infinite;
+    }
+    text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      fill: #007CF0;
+      text-anchor: middle;
+      dominant-baseline: middle;
+      user-select: none;
+      opacity: 0;
+      animation-fill-mode: forwards;
+    }
+    /* Animation fadeIn lettre par lettre, ordre O. Amine */
+    text:nth-child(3) { animation: fadeIn 0.4s ease forwards 0.3s; }  /* O */
+    text:nth-child(4) { animation: fadeIn 0.4s ease forwards 0.6s; }  /* . */
+    text:nth-child(5) { animation: fadeIn 0.4s ease forwards 0.9s; }  /* espace */
+    text:nth-child(6) { animation: fadeIn 0.4s ease forwards 1.2s; }  /* A */
+    text:nth-child(7) { animation: fadeIn 0.4s ease forwards 1.5s; }  /* m */
+    text:nth-child(8) { animation: fadeIn 0.4s ease forwards 1.8s; }  /* i */
+    text:nth-child(9) { animation: fadeIn 0.4s ease forwards 2.1s; }  /* n */
+    text:nth-child(10) { animation: fadeIn 0.4s ease forwards 2.4s; } /* e */
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  </style>
+
+  <circle class="circle" cx="60" cy="60" r="45" />
+
+  <!-- Lettres de "O. Amine" avec positions centrées -->
+  <text x="30" y="60">O</text>
+  <text x="40" y="60">.</text>
+  <text x="45" y="60"> </text> <!-- espace -->
+  <text x="50" y="60">A</text>
+  <text x="60" y="60">m</text>
+  <text x="70" y="60">i</text>
+  <text x="80" y="60">n</text>
+  <text x="90" y="60">e</text>
+</svg>

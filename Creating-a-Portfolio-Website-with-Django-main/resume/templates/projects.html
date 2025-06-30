@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content1 %}
+
+<div class="row my-2">
+    {% for project in projects_show %}
+<div class="col-6">
+    <h5 class="text-light"> {{project.title}}   </h5>
+    <h6 class="text-light">{{project.Course}}</h6>
+    <p class="text-light">{{project.Objective}} </p>
+    <img src="{% static project.path %}" width="500" height="800" class="img-fluid">
+    <p></p>
+    <a href="{{ project.report }}" target="_blank">📄 View Report (PDF)</a> |
+    <a href="{{ project.github }}" target="_blank">💻 View on GitHub</a>
+
+</div>
+{% endfor %}
+</div>
+
+{% endblock content1 %}

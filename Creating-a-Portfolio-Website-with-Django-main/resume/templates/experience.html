@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content1 %}
+<div class="container mt-4">
+  {% for eachitem in experience %}
+    <div class="row mb-4">
+      <div class="col">
+        <div class="p-4 bg-light border rounded shadow-sm">
+          <h5 class="text-primary mb-1">{{ eachitem.date }}</h5>
+          <h4 class="mb-0">{{ eachitem.position }}</h4>
+          <p class="text-muted">{{ eachitem.company }}</p>
+
+          {% if eachitem.tasks %}
+            <ul class="mb-0">
+              {% for task in eachitem.tasks %}
+                <li>{{ task }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+
+{% endblock content1 %}
