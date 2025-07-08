@@ -17,6 +17,13 @@
               {% endfor %}
             </ul>
           {% endif %}
+          <div class="mt-auto">
+            {% if degree.poster_link|slice:":1" == "/" or degree.poster_link|slice:":1" == "h" %}
+              <a href="{{ degree.poster_link }}">📄 Descriptions</a>
+            {% else %}
+              <a href="{% url 'upload' degree.poster_link %}">📄 Descriptions</a>
+            {% endif %}
+          </div>
         </div>
       </div>
     </div>

@@ -24,8 +24,10 @@ def degree(request):
                 'IFT 6758: Data Science Course , Professor(s) Gauthier Gidel and Glen Berseth.',
                 'IFT 6135: representation learning Course , Professor Aaron Courville.',
                 'IFT 6289: Natural Language Processing with Deep Learning Course , Professor Bang Liu.',
+                'IFT : Not yet',
+                'IFT : Not yet',
             ],
-            'poster_link': 'https://tonlien.com/poster_if6289'  # Remplace par ton vrai lien
+            'poster_link': 'https://admission.umontreal.ca/programmes/maitrise-en-informatique/structure-du-programme/'  # Remplace par ton vrai lien
         },
         {
             'period': 'August 2021 – June 2023',
@@ -33,38 +35,41 @@ def degree(request):
             'institution': 'Cadi Ayyad University, Faculty of Sciences and Techniques of Marrakech (FSTG), Morocco.',
             'mention': 'Mention : Bien',
             'courses': [
-                'Statistiques Avancées',
-                'Data Mining',
-                'Programmation Python pour Data Science',
-                'Modélisation et Simulation',
-                'Bases de Données',
+                'Semester 1: Digital Image Analysis and Processing, Operations Research, Python and R for Data Science, Big Data Ecosystem and NoSQL Databases, Data Analysis for Data Science, Foreign Languages (French/English) and Cultures 1.',
+                'Semester 2: Data Warehouse, Inferential Statistics, Linear Algebra Applied to Big Data, Artificial Intelligence, Soft Skills, Foreign Languages (French/English) and Cultures 2.',
+                'Semester 3: Project Management and Business Intelligence, Machine Learning for Data Science, Innovation & Environment for Data Scientists and Experience Planning, Data Mining and Decision Support Systems, Hadoop Ecosystem and Big Data Application Development, Foreign Languages (French/English) and Cultures 3.',
+                'Semester 4: Intership 6 months',
             ],
-            'poster_link': 'https://tonlien.com/poster_master_datascience'  # Remplace par ton vrai lien
+            'poster_link': 'upload/Master-SDAD.pdf'  # Remplace par ton vrai lien
         },
         {
             'period': 'August 2017 – June 2021',
             'degree': 'Bachelor\'s Degree (Fundamental License) in Mathematical and Computer Sciences',
             'institution': 'Cadi Ayyad University, Semlalia Faculty of Sciences, Marrakech, Morocco',
             'courses': [
-                'Mathématiques Discrètes',
-                'Algèbre Linéaire',
-                'Programmation Orientée Objet',
-                'Introduction aux Bases de Données',
-                'Analyse Numérique',
+                'Semester 1: Calculus I, Algebra I, Algebra II, Mechanics I, Thermodynamics I, Computer Science I, Language and Terminology. ',
+                'Semester 2: Calculus II, Calculus III, Algebra III, Electrostatics and Electrodynamics, Geometrical Optics, Computer Science II, Language and Terminology.',
+                'Semester 3: Programming I, Algorithms II, Operating Systems I, Descriptive Statistics and Probability, Web Technology.',
+                'Semester 4:',
+                'Semester 5:',
+                'Semester 6: Intership 3 months',
             ],
-            'poster_link': 'https://tonlien.com/poster_licence'  # Remplace par ton vrai lien
+            'poster_link': 'https://www.uca.ma/fssm/fr/departement/departement-informatique/licence-detudes-fondamentales-sciences-mathematiques-et-informatique'  # Remplace par ton vrai lien
         },
         {
             'period': 'August 2016 – June 2017',
             'degree': 'High School Diploma in Mathematics – Option A',
             'institution': 'Rahhali Farouk High School, El Attaouia, Kelaa des Sraghna, Morocco',
             'courses': [
-                'Mathématiques',
-                'Physique',
-                'Chimie',
-                'Informatique de base',
+                'Mathematics',
+                'Physics',
+                'Chemistry',
+                'Basic Computer Science',
+                'French',
+                'English',
+                'Arabic',
             ],
-            'poster_link': 'https://tonlien.com/poster_bac'  # Remplace par ton vrai lien
+            'poster_link': 'upload/bac_sma.pdf'  # Remplace par ton vrai lien
         },
     ]
 
@@ -203,7 +208,9 @@ def experience(request):
         "tasks": [
             "Developed an audio transcription model (Moroccan dialect) using PyTorch/TensorFlow.",
             "Fine-tuned models (Whisper, Wav2Vec2) and integrated Azure Cognitive Services.",
-            "Performed audio data web scraping from YouTube and built an ETL pipeline."
+            "Performed audio data web scraping from YouTube and built an ETL pipeline.",
+            "Concurrently worked on a voice recognition project for Orange Morocco, focusing on call transcription.",  
+            "Collaborated with the team in a competition to develop a chatbot that generates stories from text and images, achieving 3rd place.",
         ]
     },
     {
