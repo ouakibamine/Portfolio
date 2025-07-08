@@ -2,6 +2,7 @@
 {% load static %}
 {% block content1 %}
 <div class="row my-5">
+  <div class="p-4 bg-light border rounded shadow-sm">
   <div class="col-12 d-flex justify-content-center align-items-center ">
     <div class="circular-image-container">
       <img class="circular-image" src=" {% static 'images/im.jpg' %}" alt="Image">
@@ -9,19 +10,15 @@
   </div>
 
   <div class="col-12 text-center mt-3">
-    <h4 class="title"> Hello 👋 , my name is </h4>
-      <div class="name">
-        <h1> OUAKIB Amine </h1>
-        <main class="container">
-          <p>I'm</p>
-          <section class="animation">
-            <div class="first"><div>Data Scientist</div></div>
-            <div class="second"><div>Data Analyst</div></div>
-            <div class="third"><div>Data Engineer</div></div>
-          </section>
-        </main>
-      </div>
+  <h4 class="title">Hello 👋, my name is</h4>
+  <div class="name">
+    <h1>OUAKIB Amine</h1>
+    <main class="container">
+      <p><span class="typing"></span></p>
+    </main>
   </div>
+</div>
+
 
   <div class="col-12 text-center mt-3">
     <div class="col-12 d-flex justify-content-center align-items-center ">
@@ -38,7 +35,9 @@
         </a>
       </div>
   </div>
+  </div>
 </div>
 
 
 {% endblock content1 %}
+

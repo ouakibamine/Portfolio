@@ -2,19 +2,31 @@
 {% load static %}
 {% block content1 %}
 
-<div class="row my-2">
+<div class="container mt-4">
+  <div class="row">
     {% for project in projects_show %}
-<div class="col-6">
-    <h5 class="text-light"> {{project.title}}   </h5>
-    <h6 class="text-light">{{project.Course}}</h6>
-    <p class="text-light">{{project.Objective}} </p>
-    <img src="{% static project.path %}" width="500" height="800" class="img-fluid">
-    <p></p>
-    <a href="{{ project.report }}" target="_blank">📄 View Report (PDF)</a> |
-    <a href="{{ project.github }}" target="_blank">💻 View on GitHub</a>
+      <div class="col-md-6 mb-4">
+        <div class="p-4 bg-light border rounded shadow-sm h-100 d-flex flex-column">
+          <h5>{{ project.title }}</h5>
+          <h6 class="mb-0">{{ project.Course }}</h6>
+          <p>{{ project.Objective }}</p>
 
-</div>
-{% endfor %}
+          <img src="{% static project.path %}" class="img-fluid mb-3 rounded" alt="{{ project.title }}">
+
+          <div class="mt-auto">
+            {% if project.report %}
+              <a href="{% url 'upload' project.report %}" class="btn btn-outline-dark me-2 mb-2" target="_blank">
+                📄 View Report
+              </a>
+            {% endif %}
+            <a href="{{ project.github }}" class="btn btn-outline-primary mb-2" target="_blank">
+              💻 View on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
 </div>
 
 {% endblock content1 %}

@@ -1,6 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
+from django.contrib.staticfiles import finders
 from django.contrib.staticfiles.storage import staticfiles_storage
+import os
+from django.conf import settings
 
 
 # Create your views here.
@@ -10,6 +13,63 @@ def home(request):
 def about (request):
     return render (request,"about.html")
 
+def degree(request):
+    degres_show = [
+        {
+            'period': 'August 2024 – Present',
+            'degree': 'Master’s in General Computer Science with Internship Option',
+            'institution': 'Université de Montréal, Faculty of Arts and Science, Montreal, Canada',
+            'courses': [
+                'IFT 6390: Foundations of Machine Learning Course, Professor Ioannis (Yannis) Mitliagkas.',
+                'IFT 6758: Data Science Course , Professor(s) Gauthier Gidel and Glen Berseth.',
+                'IFT 6135: representation learning Course , Professor Aaron Courville.',
+                'IFT 6289: Natural Language Processing with Deep Learning Course , Professor Bang Liu.',
+            ],
+            'poster_link': 'https://tonlien.com/poster_if6289'  # Remplace par ton vrai lien
+        },
+        {
+            'period': 'August 2021 – June 2023',
+            'degree': 'Master’s Degree in Data Science and Decision-Making Support',
+            'institution': 'Cadi Ayyad University, Faculty of Sciences and Techniques of Marrakech (FSTG), Morocco.',
+            'mention': 'Mention : Bien',
+            'courses': [
+                'Statistiques Avancées',
+                'Data Mining',
+                'Programmation Python pour Data Science',
+                'Modélisation et Simulation',
+                'Bases de Données',
+            ],
+            'poster_link': 'https://tonlien.com/poster_master_datascience'  # Remplace par ton vrai lien
+        },
+        {
+            'period': 'August 2017 – June 2021',
+            'degree': 'Bachelor\'s Degree (Fundamental License) in Mathematical and Computer Sciences',
+            'institution': 'Cadi Ayyad University, Semlalia Faculty of Sciences, Marrakech, Morocco',
+            'courses': [
+                'Mathématiques Discrètes',
+                'Algèbre Linéaire',
+                'Programmation Orientée Objet',
+                'Introduction aux Bases de Données',
+                'Analyse Numérique',
+            ],
+            'poster_link': 'https://tonlien.com/poster_licence'  # Remplace par ton vrai lien
+        },
+        {
+            'period': 'August 2016 – June 2017',
+            'degree': 'High School Diploma in Mathematics – Option A',
+            'institution': 'Rahhali Farouk High School, El Attaouia, Kelaa des Sraghna, Morocco',
+            'courses': [
+                'Mathématiques',
+                'Physique',
+                'Chimie',
+                'Informatique de base',
+            ],
+            'poster_link': 'https://tonlien.com/poster_bac'  # Remplace par ton vrai lien
+        },
+    ]
+
+    return render(request, "degree.html", {'degres_show': degres_show})
+
 
 def projects (request):
     projects_show=[
@@ -18,7 +78,7 @@ def projects (request):
             'Course': 'IFT6289 - Winter 2025',
             'Objective': 'This project explores the design and evaluation of emotion recognition models in text, combining psychological insights, deep learning, and hybrid architectures. The goal is to improve emotion detection accuracy while also ensuring models are efficient and deployable in resource-constrained environments.',
             'path': 'images/poster_nlp.jpg',
-            'report': 'images/Final_Repport_IFT6289.pdf',
+            'report': 'upload/Final_Repport_IFT6289.pdf',
             'github': 'https://github.com/ouakibamine/IFT6289-H25/tree/main',
             
         },
@@ -27,7 +87,7 @@ def projects (request):
             'Course': 'IFT6390 - Automn 2024',
             'Objective': 'This project leverages NHL data for in-depth game analysis, interactive visualizations, and performance modeling. It involves multiple milestones focusing on data acquisition, processing, modeling, and deployment of predictive models.',
             'path': 'images/rapport3.png',
-            'report': 'images/Final_Repport_IFT6289.pdf',
+            'report': 'upload/Final_Repport_IFT6289.pdf',
             'github': 'https://github.com/ouakibamine/nlh-canada-project',
             
         },
@@ -36,7 +96,7 @@ def projects (request):
             'Course': 'IFT6390A - automn 2024',
             'Objective': 'This project explores the design and evaluation of emotion recognition models in text, combining psychological insights, deep learning, and hybrid architectures. The goal is to improve emotion detection accuracy while also ensuring models are efficient and deployable in resource-constrained environments.',
             'path': 'images/rapport.jpg',
-            'report': 'images/Rapport.pdf',
+            'report': 'upload/Rapport.pdf',
             'github': 'https://github.com/ouakibamine/text-classification',
             
         },
@@ -45,7 +105,7 @@ def projects (request):
             'Course': 'IFT6390A - Automn 2024',
             'Objective': 'This project explores the design and evaluation of emotion recognition models in text, combining psychological insights, deep learning, and hybrid architectures. The goal is to improve emotion detection accuracy while also ensuring models are efficient and deployable.',
             'path': 'images/rapport2.jpg',
-            'report': 'images/Rapport.pdf',
+            'report': 'upload/Rapport2.pdf',
             'github': 'https://github.com/ouakibamine/text-classification',
             
         },
@@ -54,7 +114,7 @@ def projects (request):
             'Course': 'Data Wherhouse',
             'Objective': 'This is a comprehensive data analytics project focusing on American Key Retailer data. The project involves web scraping, data cleaning, transformation, dashboard building, and insights extraction. We aim to analyze the retailer\'s data to derive insights that can inform decision-making and strategy development.',
             'path': 'images/bi.PNG',
-            'report': 'images/Final_Repport_IFT6289.pdf',
+            'report': 'upload/Final_Repport_IFT6289.pdf',
             'github': 'https://github.com/ouakibamine/Data-Analyst-Project-Using-PowerBI/tree/main',
             
         },
@@ -63,7 +123,7 @@ def projects (request):
             'Course': 'Data Wharehouse',
             'Objective': 'This is an end-to-end data analytics project. In this project, we analyze cricket 2022 World Cup data (2022) to assemble the best 11 players team that could potentially play against aliens. The project involves web scraping, data cleaning, transformation, dashboard building, and insights extraction.',
             'path': 'images/page1.PNG',
-            'report': 'images/Final_Repport_IFT6289.pdf',
+            'report': 'upload/Final_Repport_IFT6289.pdf',
             'github': 'https://github.com/ouakibamine/Data-Analyst-Project-cricket-world-cup/tree/main',
             
         },
@@ -96,7 +156,7 @@ def projects (request):
                   {
             'title': 'Labour Hiring',
             'Objective':'',
-            'path': 'images\labour_hiring.PNG',
+            'path': 'images/labour_hiring.PNG',
         },
 
     ]
@@ -201,3 +261,16 @@ def resume(request):
             return response
     else:
         return HttpResponse("resume not found", status=404)
+
+
+
+
+def upload(request, path):
+    # Exemple de fichier attendu : "myapp/Final_Repport_IFT6289.pdf"
+    static_path = os.path.join(settings.BASE_DIR,'resume', path)
+    
+    if os.path.exists(static_path):
+        with open(static_path, 'rb') as f:
+            return HttpResponse(f.read(), content_type='application/pdf')
+    else:
+        raise Http404("Report not found")
