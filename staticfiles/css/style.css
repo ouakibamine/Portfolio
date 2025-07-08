@@ -1,27 +1,6 @@
-body{
-    background-color: rgb(20,0,30);
-}
-
-.navbar-nav .nav-link:hover{
-    font-weight:bold;
-    color:#4fffb0;
-}
-
-.navbar-nav .nav-link{
-    font-size: 20px;
-}
-
-.navbar-brand{
-    font-size: 25px;
-}
-
-.navbar-dark{
-    background-color: rgb(18,1,46);
-}
-
 .circular-image-container{
-    width:200px;
-    height:200px;
+    width:260px;
+    height:260px;
     overflow: hidden;
     border-radius: 50%;
     border: 2px solid #ccc;
@@ -32,17 +11,19 @@ body{
 }
 
 .circular-image{
-width:120%;
+width:100%;
 height: auto;
 display: block;
 }
 
-.name{
-    color: #fff;
+.col-12 .text-center .mt-3 .name h1{
+  color: #0000;
+  font-weight: bold;
 }
 
-.title{
-    color: #4fffb0;
+.col-12 .text-center .mt-3 .title{
+  color: #0000;
+  font-weight: 1000;
 }
 
 .social_links{
@@ -84,3 +65,24 @@ font-size: 24px;
     border-radius: 10px;
     background-color: #f0f0f0;
 }
+
+.container .typing {
+  color: #5161ce; /* ou #00FFFF */
+  font-weight: 1600;
+  letter-spacing: 3px;
+  font-size: 2.5em;
+}
+
+.container .typing::after {
+  content: "|";
+  animation: blink 60s infinite;
+  color: #5161ce;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
