@@ -133,9 +133,12 @@ def projects (request):
             
         },
         {
-            'title': 'Timetable Scheduler',
-            'Objective':'',
-            'path': 'images/timtable.PNG',
+            'title': 'Student Management System',
+            'Objective': 'To develop a web-based application that allows administrators, teachers, and students to manage academic records efficiently. The system supports student registration, grade tracking, attendance management, and report generation, providing an organized and user-friendly interface for educational institutions.',
+            'path': 'images/student_project.PNG',
+            'report': 'upload/Final_Repport_IFT6289.pdf',
+            'github': 'https://github.com/ouakibamine/StudentManagementSystem',
+            
         },
         {
             'title': 'CRUD',
@@ -155,8 +158,10 @@ def projects (request):
         },
          {
             'title': 'Portfolio',
-            'Objective':'',
+            'Objective': 'To build a personal portfolio website to showcase academic projects, professional experience, technical skills, and achievements. The platform serves as a dynamic and interactive CV, allowing visitors to explore the developer’s profile, GitHub repositories, and contact information.',
             'path': 'images/portfolio.PNG',
+            'report': 'upload/Final_Repport_IFT6289.pdf',
+            'github': 'https://github.com/ouakibamine/Portfolio',
         },
                   {
             'title': 'Labour Hiring',
