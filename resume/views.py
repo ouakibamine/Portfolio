@@ -136,14 +136,16 @@ def projects (request):
             'title': 'Student Management System',
             'Objective': 'To develop a web-based application that allows administrators, teachers, and students to manage academic records efficiently. The system supports student registration, grade tracking, attendance management, and report generation, providing an organized and user-friendly interface for educational institutions.',
             'path': 'images/student_project.PNG',
-            'report': 'upload/Final_Repport_IFT6289.pdf',
+            'report': 'upload/Eduford.pdf',
             'github': 'https://github.com/ouakibamine/StudentManagementSystem',
             
         },
         {
-            'title': 'CRUD',
-            'Objective':'',
-            'path': 'images/CRUD.PNG',
+            'title': 'Smart Music Platform',
+            'Objective': 'To provide users with an easy-to-use platform for discovering and listening to songs in multiple languages.',
+            'path': 'images/student_project.PNG',
+            'report': 'upload/Earsong.pdf',
+            'github': 'https://github.com/ouakibamine/Earsong',
         },
 
          {
