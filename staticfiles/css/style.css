@@ -67,7 +67,7 @@ font-size: 24px;
 }
 
 .container .typing {
-  color: #5161ce; /* ou #00FFFF */
+  color: white; /* ou #00FFFF */
   font-weight: 1600;
   letter-spacing: 3px;
   font-size: 2.5em;
@@ -76,7 +76,7 @@ font-size: 24px;
 .container .typing::after {
   content: "|";
   animation: blink 60s infinite;
-  color: #5161ce;
+  color: white;
 }
 
 @keyframes blink {
@@ -84,5 +84,10 @@ font-size: 24px;
   50% { opacity: 0; }
   100% { opacity: 1; }
 }
+
+
+
+
+
 
 

@@ -24,8 +24,8 @@ def degree(request):
                 'IFT 6758: Data Science Course , Professor(s) Gauthier Gidel and Glen Berseth.',
                 'IFT 6135: representation learning Course , Professor Aaron Courville.',
                 'IFT 6289: Natural Language Processing with Deep Learning Course , Professor Bang Liu.',
-                'IFT : Not yet',
-                'IFT : Not yet',
+                'IFT 6285: Traitement automatique des langues naturelles Course, Professor Simon Lacoste-Julien.',
+                'IFT 6757:  Autonomous Vehicles (aka. Duckietown) Course, Professor Liam Paull.',
             ],
             'poster_link': 'https://admission.umontreal.ca/programmes/maitrise-en-informatique/structure-du-programme/'  # Remplace par ton vrai lien
         },
@@ -135,7 +135,7 @@ def projects (request):
         {
             'title': 'Student Management System',
             'Objective': 'To develop a web-based application that allows administrators, teachers, and students to manage academic records efficiently. The system supports student registration, grade tracking, attendance management, and report generation, providing an organized and user-friendly interface for educational institutions.',
-            'path': 'images/student_project.PNG',
+            'path': 'images/eduford.PNG',
             'report': 'upload/Eduford.pdf',
             'github': 'https://github.com/ouakibamine/StudentManagementSystem',
             
@@ -143,32 +143,38 @@ def projects (request):
         {
             'title': 'Smart Music Platform',
             'Objective': 'To provide users with an easy-to-use platform for discovering and listening to songs in multiple languages.',
-            'path': 'images/student_project.PNG',
+            'path': 'images/earsong.PNG',
             'report': 'upload/Earsong.pdf',
             'github': 'https://github.com/ouakibamine/Earsong',
         },
 
          {
-            'title': 'Photo Uploader',
-            'Objective':'',
-            'path': 'images/photo_uploader.PNG',
+            'title': 'Comparative Study of MLP, MLP-Mixer, and ResNet Architectures for Image Classification',
+            'Objective':'The objective of this project is to implement and compare three different neural network architectures—Multilayer Perceptron (MLP), MLP-Mixer, and Residual Networks (ResNet)—on an image classification task.',
+            'path': 'images/devoir2.PNG',
+            'report': 'upload/IFT6135___H2025__students___tudiant___Copy___4_.pdf',
+            'github': 'https://github.com/ouakibamine/Earsong',
         },
           {
-            'title': 'To do list',
-            'Objective':'',
-            'path': 'images/todolist.PNG',
+            'title': 'Exploring Generative Models: Variational Autoencoders and Diffusion Models on MNIST',
+            'Objective':'The objective of this project is to implement and analyze two families of generative models—Variational Autoencoders (VAEs) and Denoising Diffusion Probabilistic Models (DDPMs)—to learn the underlying distribution of the MNIST dataset.',
+            'path': 'images/images_generer.PNG',
+            'report': 'upload/IFT6135___H2025__Amine_ouakib_pratique_hM3__1_.pdf',
+            'github': 'https://github.com/ouakibamine/Portfolio',
         },
          {
-            'title': 'Portfolio',
+            'title': 'PORTFOLIO',
             'Objective': 'To build a personal portfolio website to showcase academic projects, professional experience, technical skills, and achievements. The platform serves as a dynamic and interactive CV, allowing visitors to explore the developer’s profile, GitHub repositories, and contact information.',
             'path': 'images/portfolio.PNG',
             'report': 'upload/Final_Repport_IFT6289.pdf',
             'github': 'https://github.com/ouakibamine/Portfolio',
         },
                   {
-            'title': 'Labour Hiring',
-            'Objective':'',
-            'path': 'images/labour_hiring.PNG',
+            'title': 'STACK OVERFLOW DEVELOPER SURVEY 2025',
+            'Objective':'The objective is to build a professional dashboard that shows what technologies developers currently use, what they want to learn in the future, and who they are (demographics), in order to analyze trends and support data-driven decision-making.',
+            'path': 'images/capstone_project.PNG',
+            'report': 'upload/DataAnalystPresentation.pdf',
+            'github': 'https://github.com/ouakibamine/STACK-OVERFLOW-DEVELOPER-SURVEY-2025',
         },
 
     ]

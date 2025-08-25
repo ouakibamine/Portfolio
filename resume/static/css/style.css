@@ -26,6 +26,7 @@ display: block;
   font-weight: 1000;
 }
 
+
 .social_links{
     overflow: hidden;
     border-radius: 50%;
@@ -43,7 +44,7 @@ display: block;
 }
 
 .jumbtron{
-    background-color: #002244;
+    background-color: linear-gradient(135deg, #ffff, #002244, #2c5364);
     padding:20px;
     border-radius:10px;
 }
@@ -67,7 +68,7 @@ font-size: 24px;
 }
 
 .container .typing {
-  color: #5161ce; /* ou #00FFFF */
+  color: white; /* ou #00FFFF */
   font-weight: 1600;
   letter-spacing: 3px;
   font-size: 2.5em;
@@ -76,7 +77,7 @@ font-size: 24px;
 .container .typing::after {
   content: "|";
   animation: blink 60s infinite;
-  color: #5161ce;
+  color: white;
 }
 
 @keyframes blink {
@@ -86,3 +87,8 @@ font-size: 24px;
 }
 
 
+body {
+    background: linear-gradient(135deg, #ffff, #ffff,#ffff);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+  }

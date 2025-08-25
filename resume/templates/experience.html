@@ -1,17 +1,28 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content1 %}
-<div class="container mt-4">
-  {% for eachitem in experience %}
-    <div class="row mb-4">
-      <div class="col">
-        <div class="p-4 bg-light border rounded shadow-sm">
-          <h5 class="text-primary mb-1">{{ eachitem.date }}</h5>
-          <h4 class="mb-0">{{ eachitem.position }}</h4>
-          <p class="text-muted">{{ eachitem.company }}</p>
 
+<div class="container my-5">
+  <h2 class="text-center mb-5 title-gradient">💼 My Professional Journey</h2>
+
+  <div class="timeline-wrapper">
+    <div class="timeline-line"></div>
+
+    <div class="timeline-items d-flex flex-nowrap">
+      {% for eachitem in experience %}
+      <div class="timeline-item tilt-card">
+        <div class="timeline-point" style="background: {{ eachitem.color|default:'#00c9ff' }}"></div>
+        <div class="timeline-card p-4 shadow-lg">
+          <div class="d-flex align-items-center mb-2">
+            <div class="timeline-icon" style="background: {{ eachitem.color|default:'#4fffb0' }}">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <h5 class="mb-0 ms-3 text-primary">{{ eachitem.date }}</h5>
+          </div>
+          <h4 class="fw-bold">{{ eachitem.position }}</h4>
+          <p class="text-muted">{{ eachitem.company }}</p>
           {% if eachitem.tasks %}
-            <ul class="mb-0">
+            <ul class="mb-0 ps-3">
               {% for task in eachitem.tasks %}
                 <li>{{ task }}</li>
               {% endfor %}
@@ -19,9 +30,184 @@
           {% endif %}
         </div>
       </div>
+      {% endfor %}
     </div>
-  {% endfor %}
+  </div>
 </div>
+<!-- Footer -->
+<footer class="footer mt-5 py-4" style="background: linear-gradient(135deg, #24307F, #5161ce); color: #fff;">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-4 mb-3 mb-md-0">
+        <h5>About</h5>
+        <p>Amine Portolio, Data Analyst 📊, AI & Deep Learning Enthusiast 🤖, Full-Stack Developer 💻, Tech Explorer 🚀.</p>
+      </div>
+      <div class="col-md-4 mb-3 mb-md-0">
+        <h5>Contact</h5>
+        <p>Email : <a href="mailto:sam@example.com" style="color: #fff;">amine.ouakib@umontreal.ca</a></p>
+        <p>Phone : +1-4389927928</p>
+      </div>
+      <div class="col-md-4">
+        <h5>Follow me</h5>
+        <a href="https://www.linkedin.com/in/amine-ouakib-bb881121a/" class="text-white me-2"><i class="fab fa-linkedin fa-lg"></i></a>
+        <a href="https://github.com/ouakibamine" class="text-white me-2"><i class="fab fa-github fa-lg"></i></a>
+        <a href="https://huggingface.co/amineouaki" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
+      </div>
+    </div>
+    <hr style="border-color: rgba(255,255,255,0.2);">
+    <p class="mb-0">&copy; 2025 Amine. All rights reserved.</p>
 
+  </div>
+</footer>
+
+<!-- CSS additionnel (optionnel) -->
+<style>
+.footer a:hover {
+    color: #00ffff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+</style>
+
+<style>
+/* Title Gradient */
+.title-gradient {
+  background: linear-gradient(90deg, #4fffb0, #00c9ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+/* Timeline Wrapper */
+.timeline-wrapper {
+  position: relative;
+  overflow-x: auto;
+  padding: 60px 0;
+}
+
+/* Neon Line */
+.timeline-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background: linear-gradient(90deg, #00c9ff, #4fffb0, #00c9ff);
+  box-shadow: 0 0 20px #00c9ff, 0 0 40px #4fffb0;
+  transform: translateY(-50%);
+  z-index: 1;
+  border-radius: 3px;
+  animation: glow-line 2s infinite alternate;
+}
+
+@keyframes glow-line {
+  0% { box-shadow: 0 0 10px #00c9ff, 0 0 20px #4fffb0; }
+  100% { box-shadow: 0 0 30px #00c9ff, 0 0 50px #4fffb0; }
+}
+
+/* Timeline Items */
+.timeline-items {
+  display: flex;
+  gap: 50px;
+  padding-left: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-item {
+  position: relative;
+  min-width: 320px;
+  flex: 0 0 auto;
+  perspective: 1000px;
+}
+
+/* Points */
+.timeline-point {
+  width: 22px;
+  height: 22px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: -11px;
+  transform: translateY(-50%);
+  z-index: 3;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.timeline-item:hover .timeline-point {
+  transform: translateY(-50%) scale(1.5);
+  box-shadow: 0 0 15px #4fffb0;
+}
+
+/* Cards */
+.timeline-card {
+  width: 600px;          /* Largeur fixe */
+  height: 350px;         /* Hauteur fixe */
+  background: linear-gradient(135deg, #5161ce, #24307F,#ffff);;
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 25px;
+  transition: transform 0.5s, box-shadow 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Aligne contenu */
+  overflow: hidden;      /* Cache le débordement */
+}
+
+.timeline-card-content {
+  overflow-y: auto;      /* Permet le scroll si le texte est trop long */
+}
+
+/* Survol */
+.timeline-card:hover {
+  transform: rotateY(10deg) rotateX(5deg) translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,255,200,0.5);
+}
+
+.timeline-icon {
+  width: 50px;
+  height: 50px;
+  background: #4fffb0;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Scrollbar style */
+.timeline-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+.timeline-wrapper::-webkit-scrollbar-thumb {
+  background: #4fffb0;
+  border-radius: 4px;
+}
+.timeline-wrapper::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.05);
+}
+
+/* Tilt Effect */
+.tilt-card {
+  transition: transform 0.2s;
+}
+.tilt-card:hover {
+  transform: rotateY(8deg) rotateX(3deg);
+}
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+<script>
+// Apply 3D tilt effect
+VanillaTilt.init(document.querySelectorAll(".tilt-card"), {
+    max: 15,
+    speed: 400,
+    glare: true,
+    "max-glare": 0.3
+});
+</script>
 
 {% endblock content1 %}
