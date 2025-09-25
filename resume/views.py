@@ -24,8 +24,8 @@ def degree(request):
                 'IFT 6758: Data Science Course , Professor(s) Gauthier Gidel and Glen Berseth.',
                 'IFT 6135: representation learning Course , Professor Aaron Courville.',
                 'IFT 6289: Natural Language Processing with Deep Learning Course , Professor Bang Liu.',
-                'IFT 6285: Traitement automatique des langues naturelles Course, Professor Simon Lacoste-Julien.',
-                'IFT 6757:  Autonomous Vehicles (aka. Duckietown) Course, Professor Liam Paull.',
+                'IFT 6285: Traitement automatique des langues naturelles Course, Professor Felipe.',
+                'IFT 6167:  continual learning Course, Professor Irina Rish.',
             ],
             'poster_link': 'https://admission.umontreal.ca/programmes/maitrise-en-informatique/structure-du-programme/'  # Remplace par ton vrai lien
         },
@@ -50,9 +50,9 @@ def degree(request):
                 'Semester 1: Calculus I, Algebra I, Algebra II, Mechanics I, Thermodynamics I, Computer Science I, Language and Terminology. ',
                 'Semester 2: Calculus II, Calculus III, Algebra III, Electrostatics and Electrodynamics, Geometrical Optics, Computer Science II, Language and Terminology.',
                 'Semester 3: Programming I, Algorithms II, Operating Systems I, Descriptive Statistics and Probability, Web Technology.',
-                'Semester 4:',
-                'Semester 5:',
-                'Semester 6: Intership 3 months',
+                "Semester 4: Data Structures, Operating Systems II, Programming II, Numerical Analysis, Electronics, Computer Architecture",
+                "Semester 5: Databases I, Databases II, Networks, Operations Research, Information Systems, Object-Oriented Programming",
+                "Semester 6: Artificial Intelligence, Object-Oriented Design (UML), Web Programming (PHP), Compilation, Capstone / Tutored Project"
             ],
             'poster_link': 'https://www.uca.ma/fssm/fr/departement/departement-informatique/licence-detudes-fondamentales-sciences-mathematiques-et-informatique'  # Remplace par ton vrai lien
         },
@@ -135,6 +135,7 @@ def projects (request):
         {
             'title': 'Student Management System',
             'Objective': 'To develop a web-based application that allows administrators, teachers, and students to manage academic records efficiently. The system supports student registration, grade tracking, attendance management, and report generation, providing an organized and user-friendly interface for educational institutions.',
+            'Course': 'Personal Project',
             'path': 'images/eduford.PNG',
             'report': 'upload/Eduford.pdf',
             'github': 'https://github.com/ouakibamine/StudentManagementSystem',
@@ -143,6 +144,7 @@ def projects (request):
         {
             'title': 'Smart Music Platform',
             'Objective': 'To provide users with an easy-to-use platform for discovering and listening to songs in multiple languages.',
+            'Course': 'Personal Project',
             'path': 'images/earsong.PNG',
             'report': 'upload/Earsong.pdf',
             'github': 'https://github.com/ouakibamine/Earsong',
@@ -151,6 +153,7 @@ def projects (request):
          {
             'title': 'Comparative Study of MLP, MLP-Mixer, and ResNet Architectures for Image Classification',
             'Objective':'The objective of this project is to implement and compare three different neural network architectures—Multilayer Perceptron (MLP), MLP-Mixer, and Residual Networks (ResNet)—on an image classification task.',
+            'Course': 'IFT 6135: representation learning',
             'path': 'images/devoir2.PNG',
             'report': 'upload/IFT6135___H2025__students___tudiant___Copy___4_.pdf',
             'github': 'https://github.com/ouakibamine/Earsong',
@@ -158,6 +161,7 @@ def projects (request):
           {
             'title': 'Exploring Generative Models: Variational Autoencoders and Diffusion Models on MNIST',
             'Objective':'The objective of this project is to implement and analyze two families of generative models—Variational Autoencoders (VAEs) and Denoising Diffusion Probabilistic Models (DDPMs)—to learn the underlying distribution of the MNIST dataset.',
+            'Course': 'IFT 6135: representation learning',
             'path': 'images/images_generer.PNG',
             'report': 'upload/IFT6135___H2025__Amine_ouakib_pratique_hM3__1_.pdf',
             'github': 'https://github.com/ouakibamine/Portfolio',
@@ -165,6 +169,7 @@ def projects (request):
          {
             'title': 'PORTFOLIO',
             'Objective': 'To build a personal portfolio website to showcase academic projects, professional experience, technical skills, and achievements. The platform serves as a dynamic and interactive CV, allowing visitors to explore the developer’s profile, GitHub repositories, and contact information.',
+            'Course': 'Personal Project',
             'path': 'images/portfolio.PNG',
             'report': 'upload/Final_Repport_IFT6289.pdf',
             'github': 'https://github.com/ouakibamine/Portfolio',
@@ -172,6 +177,7 @@ def projects (request):
                   {
             'title': 'STACK OVERFLOW DEVELOPER SURVEY 2025',
             'Objective':'The objective is to build a professional dashboard that shows what technologies developers currently use, what they want to learn in the future, and who they are (demographics), in order to analyze trends and support data-driven decision-making.',
+            'Course': 'Personal Project',
             'path': 'images/capstone_project.PNG',
             'report': 'upload/DataAnalystPresentation.pdf',
             'github': 'https://github.com/ouakibamine/STACK-OVERFLOW-DEVELOPER-SURVEY-2025',
@@ -183,7 +189,17 @@ def projects (request):
 
 def experience(request):
     experience = [
-
+    {
+    "date": "September 2025 – Present",
+    "company": "Université de Montréal, SAFIRE, Montreal, Canada",
+    "position": "Technical Assistant – Exam Support",
+    "tasks": [
+        "Prepared exam logistics (labeling, assembling, and distributing envelopes).",
+        "Welcomed and assisted teaching assistants before proctoring.",
+        "Managed exams: sorting, secure archiving (USB keys, photocopies), and organization by department.",
+        "Responded to emergencies (replacing proctors, delivering materials, opening rooms)."
+    ]
+},
      {
     "date": "June 2025 – Present",
     "company": "Dollarama, Montreal, Canada",
